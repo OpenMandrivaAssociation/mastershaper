@@ -21,7 +21,6 @@ Url: http://shaper.netshadow.at/
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Requires: apache, php-pear, php-jpgraph, php-pear-Net_IPv4, php-gd, php-mysql, apache-mod_php, mysql, php-layersmenu
 Buildarch: noarch
-Prereq: rpm-helper
 
 %description
 The MasterShaper is an network traffic shaper which provides an Web Interface
