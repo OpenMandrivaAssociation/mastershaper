@@ -1,7 +1,7 @@
 %define name mastershaper
 %define version 0.44
 %define prerelease  c
-%define release %mkrel 1
+%define release %mkrel 2
 %define _webdir /var/www
 
 %define _requires_exceptions pear(jpgraph/jpgraph_bar.php)\\|pear(jpgraph/jpgraph_line.php)\\|pear(jpgraph/jpgraph.php)\\|pear(jpgraph/jpgraph_pie3d.php)\\|pear(jpgraph/jpgraph_pie.php)
@@ -13,13 +13,13 @@ Release: %{release}
 Source0: %{name}_%{version}.tar.bz2
 Source1: master_shaper_quick_setup
 Source2: mastershaper.init
-Patch0: mastershaper_shaper_stat.patch.bz2
-Patch1: mastershaper_tc_collector.patch.bz2
+Patch0: mastershaper_shaper_stat.patch
+Patch1: mastershaper_tc_collector.patch
 License: GPL
 Group: System/Configuration/Networking
 Url: http://shaper.netshadow.at/
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-Requires: apache, php-pear, php5-jpgraph, php-pear-Net_IPv4, php-gd, php-mysql, apache-mod_php, mysql, php-layersmenu
+Requires: apache, php-pear, php-jpgraph, php-pear-Net_IPv4, php-gd, php-mysql, apache-mod_php, mysql, php-layersmenu
 Buildarch: noarch
 Prereq: rpm-helper
 
@@ -66,7 +66,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(-,root,root)
 %doc docs/ INSTALL LICENSE README tools/
-%{_prefix}/share/doc/%name/master_shaper_quick_setup
 %attr(755,root,root) %{_initrddir}/mastershaper
 %attr(644,root,root) %{_webdir}/shaper/*.php
 %attr(644,root,root) %{_webdir}/shaper/*.css
@@ -79,3 +78,4 @@ rm -rf $RPM_BUILD_ROOT
 %attr(644,root,root) %{_webdir}/shaper/ms_menu.txt
 %attr(755,root,root) %{_webdir}/shaper/shaper_loader.sh
 %attr(755,root,root) %{_bindir}/tc_collector.pl
+
