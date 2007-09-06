@@ -1,7 +1,7 @@
 %define name mastershaper
 %define version 0.44
 %define prerelease  c
-%define release %mkrel 2
+%define release %mkrel 3
 %define _webdir /var/www
 
 %define _requires_exceptions pear(jpgraph/jpgraph_bar.php)\\|pear(jpgraph/jpgraph_line.php)\\|pear(jpgraph/jpgraph.php)\\|pear(jpgraph/jpgraph_pie3d.php)\\|pear(jpgraph/jpgraph_pie.php)
@@ -48,7 +48,8 @@ mkdir -p $RPM_BUILD_ROOT%{_webdir}/shaper/
 mkdir -p $RPM_BUILD_ROOT%{_prefix}/share/doc/%name/
 mkdir -p $RPM_BUILD_ROOT%{_bindir}
 mkdir -p $RPM_BUILD_ROOT%{_initrddir}
-cp %{SOURCE1} $RPM_BUILD_ROOT%{_prefix}/share/doc/%name/master_shaper_quick_setup
+#cp %{SOURCE1} $RPM_BUILD_ROOT%{_prefix}/share/doc/%name/master_shaper_quick_setup
+cp -v %{SOURCE1} $RPM_BUILD_DIR/MasterShaper-%version/master_shaper_quick_setup
 cp %{SOURCE2} $RPM_BUILD_ROOT%{_initrddir}/mastershaper
 mv -v htdocs/tc_collector.pl $RPM_BUILD_ROOT%{_bindir}
 cp -a htdocs/* $RPM_BUILD_ROOT%{_webdir}/shaper/
@@ -64,7 +65,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-,root,root)
-%doc docs/ INSTALL LICENSE README tools/
+%doc docs/ INSTALL LICENSE README tools/ master_shaper_quick_setup
 %attr(755,root,root) %{_initrddir}/mastershaper
 %attr(644,root,root) %{_webdir}/shaper/*.php
 %attr(644,root,root) %{_webdir}/shaper/*.css
