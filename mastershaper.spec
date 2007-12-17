@@ -18,7 +18,6 @@ Patch1: mastershaper_tc_collector.patch
 License: GPL
 Group: System/Configuration/Networking
 Url: http://shaper.netshadow.at/
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Requires: apache, php-pear, php-jpgraph, php-pear-Net_IPv4, php-gd, php-mysql, apache-mod_php, mysql, php-layersmenu
 Buildarch: noarch
 
