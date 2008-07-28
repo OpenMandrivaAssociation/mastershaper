@@ -1,7 +1,7 @@
 %define name mastershaper
 %define version 0.44
 %define prerelease  c
-%define release %mkrel 3
+%define release %mkrel 5
 %define _webdir /var/www
 
 %define _requires_exceptions pear(jpgraph/jpgraph_bar.php)\\|pear(jpgraph/jpgraph_line.php)\\|pear(jpgraph/jpgraph.php)\\|pear(jpgraph/jpgraph_pie3d.php)\\|pear(jpgraph/jpgraph_pie.php)
