@@ -49,7 +49,7 @@ mkdir -p $RPM_BUILD_ROOT%{_prefix}/share/doc/%name/
 mkdir -p $RPM_BUILD_ROOT%{_bindir}
 mkdir -p $RPM_BUILD_ROOT%{_initrddir}
 #cp %{SOURCE1} $RPM_BUILD_ROOT%{_prefix}/share/doc/%name/master_shaper_quick_setup
-cp -v %{SOURCE1} $RPM_BUILD_DIR/MasterShaper-%version/master_shaper_quick_setup
+cp -v %{SOURCE1} %{_builddir}/MasterShaper-%version/master_shaper_quick_setup
 cp %{SOURCE2} $RPM_BUILD_ROOT%{_initrddir}/mastershaper
 mv -v htdocs/tc_collector.pl $RPM_BUILD_ROOT%{_bindir}
 cp -a htdocs/* $RPM_BUILD_ROOT%{_webdir}/shaper/
