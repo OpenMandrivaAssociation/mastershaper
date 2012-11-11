@@ -1,0 +1,11 @@
+--- htdocs/tc_collector.pl	2005-11-22 20:32:04.000000000 +0100
++++ htdocs/tc_collector.pl.patched	2006-01-11 19:29:32.000000000 +0100
+@@ -89,7 +89,7 @@
+ }
+ 
+ # read options from the config file
+-readCfg('config.dat');
++readCfg('/var/www/html/shaper/config.dat');
+ 
+ # connect to MySQL
+ my $dbh = DBI->connect( 'dbi:mysql:'. $config{'MYSQL_DB'} .':'. $config{'MYSQL_HOST'}, $config{'MYSQL_USER'}, $config{'MYSQL_PASS'}) || die "Can't connect to MySQL database: $DBI::errstr\n";
